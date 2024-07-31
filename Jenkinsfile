@@ -21,8 +21,8 @@ pipeline{
 
                script {
                   
-                 withCredentials([string(credentialsId: 'docker-hub', variable: 'docker-hub')]) {
-                    sh 'docker login -u good777lord -p ${docker-hub}'
+                 withCredentials([string(credentialsId: 'dockerID', variable: 'dockerID')]) {
+                    sh 'docker login -u good777lord -p ${dockerID}'
             }
               sh 'docker push good777lord/imag1.0:latest'
             }
